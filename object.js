@@ -18,3 +18,6 @@ let collection=[
     console.log(collection);
     collection.teacherName="John Mac";
     collection.phoneNo=67589075;
+    console.log(collection);
+    var trainerInfo=["Rita","28","Haridwar",{isMarried:true}];
+    console.log(trainerInfo);
