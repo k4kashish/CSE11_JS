@@ -18,14 +18,23 @@ result2[1].style.color="lavender";
 result2[1].innerText="my paragraph";
 
 //using querySelector
-const test=document.querySelector("ul li:nth Child(3)");
-test.style.backgroundColor="blue";
+const test=document.querySelector("ul li:nth-Child(3)");
+test.style.backgroundColor="skyblue";
 test.style.padding="10px";
 
 //using querySelectorall
 const test2=document.querySelectorAll("ul li");
-for(x in test3){
-    test3[x].style.backgroundColor="blue";
-    test3[x].style.margin="10px";
-    test3[x].style.color="black"
+for(x in test2){
+    test2[x].style.backgroundColor="blue";
+    test2[x].style.margin="10px";
+    test2[x].style.color="black"
+}
+//Attributes
+const element=document.getElementById("myH1");
+let text=element.getAttribute("class");
+document.getElementById("demo").innerHTML=text;
+
+function myFunction()
+{document.getElementById("demo").setAttribute("class","democlass");
+alert("Attribute added successfully");
 }
