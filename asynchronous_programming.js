@@ -24,10 +24,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
 localStorage.setItem("name","Jeet");
 
 var name1=localStorage.getItem("name");
-console.log(name1);
+console.log(name1); 
 
 localStorage.removeItem("name");
 
 var user={name:"Jeet",age:50};
-localStorage.stItem("user",JSON.stringify(user));
+localStorage.setItem("user",JSON.stringify(user));
 console.log(data.name,data.age);

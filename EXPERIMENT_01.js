@@ -1,38 +1,50 @@
-function calculateResult(){
-    const n=document.getElementById("subjects").value;
-    let total=0;
-    let i;
-    for(i=0;i<n;i++){
-        let x=parseFloat(prompt("Enter the subject number"+(i+1)));
-        total+=x;
+function calculateResult() {
+
+    let n = parseInt(document.getElementById("subjects").value);
+
+    if (isNaN(n) || n <= 0) {
+        alert("Please enter a valid number of subjects!");
+        return;
     }
 
-    let average=total/n;
+    let total = 0;
 
+    // Loop to take marks
+    for (let i = 0; i < n; i++) {
+        let marks = parseFloat(prompt("Enter marks for subject " + (i + 1)));
+
+        if (isNaN(marks)) {
+            alert("Invalid input! Please enter numbers only.");
+            i--; // repeat same subject
+            continue;
+        }
+
+        total += marks;
+    }
+
+    let average = total / n;
+
+    // Grade using conditions
     let grade;
-    if(average>90){
-        grade="A+";
+    if (average >= 90) {
+        grade = "A+";
+    } else if (average >= 75) {
+        grade = "A";
+    } else if (average >= 60) {
+        grade = "B";
+    } else if (average >= 50) {
+        grade = "C";
+    } else {
+        grade = "F";
     }
-    else if(average>75){
-        grade="A";
-    }
-    else if(average>60){
-        grade="B";
-    }
-    else if(average>50){
-        grade="C";
-    }
-    else{
-        grade="fail";
-    }
-    
 
-     let r;
-      if(average>40){
-        r="pass";     
-     }
-     else 
-        r="fail";
+    // Pass / Fail
+    let resultStatus = (average >= 40) ? "Pass" : "Fail";
 
-     let result=document.getElementById("result").innerHTML="Total marks"+total+"<br/>"+"Average"+average+"<br>"+"Grade: "+grade+"<br>"+"result: "+r
+    // Display output
+    document.getElementById("result").innerHTML =
+        "<b>Total Marks:</b> " + total + "<br>" +
+        "<b>Average Marks:</b> " + average.toFixed(2) + "<br>" +
+        "<b>Grade:</b> " + grade + "<br>" +
+        "<b>Result:</b> " + resultStatus;
 }

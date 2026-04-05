@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>EXPERIMENT 01</title>
-    </head>
-    <body>
-        <div class="conatiner">
-            <input type="text" id=""
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 10px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #output {
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Employee Management System</h2>
+
+    <input type="text" id="name" placeholder="Employee Name"><br>
+    <input type="text" id="id" placeholder="Employee ID"><br>
+    <input type="number" id="salary" placeholder="Salary"><br>
+    <input type="text" id="dept" placeholder="Department"><br>
+
+    <button onclick="addEmployee()">Add Employee</button>
+
+    <hr>
+
+    <button onclick="displayEmployees()">Display All</button>
+    <button onclick="filterSalary()">Salary > 50000</button>
+    <button onclick="totalSalary()">Total Salary</button>
+    <button onclick="averageSalary()">Average Salary</button>
+    <button onclick="countDepartment()">Count by Dept</button>
+
+    <div id="output"></div>
+</div>
+
+<script src="EXPERIMENT_02.js"></script>
+
+</body>
+</html>
